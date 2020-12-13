@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+*.opendb
+*.db
+.vs/Asteroids/v16/.suo
+*.db-wal
+*.db-shm
+*.ipch
