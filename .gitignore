@@ -36,3 +36,7 @@
 *.db-wal
 *.db-shm
 *.ipch
+*.pdb
+*.pdb
+*.idb
+*.pdb
