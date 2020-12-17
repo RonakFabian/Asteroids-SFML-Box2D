@@ -151,23 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="entity.cpp" />
-    <ClCompile Include="entity_manager.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Rocket.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="test_state.cpp" />
+    <ClCompile Include="Source\entity.cpp" />
+    <ClCompile Include="Source\entity_manager.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\test_state.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="entity.h" />
-    <ClInclude Include="entity_manager.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="game_state.h" />
-    <ClInclude Include="Rocket.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="test_state.h" />
+    <ClInclude Include="Source\entity.h" />
+    <ClInclude Include="Source\entity_manager.h" />
+    <ClInclude Include="Source\Game.h" />
+    <ClInclude Include="Source\game_state.h" />
+    <ClInclude Include="Source\test_state.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\.gitignore" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

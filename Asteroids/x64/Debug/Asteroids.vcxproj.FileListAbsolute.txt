@@ -2,3 +2,5 @@ E:\Asteroid\Asteroids\x64\Debug\Asteroids.exe
 E:\Asteroid\Asteroids\x64\Debug\Asteroids.pdb
 E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\x64\Debug\Asteroids.exe
 E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\x64\Debug\Asteroids.pdb
+E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\Asteroids\x64\Debug\Asteroids.exe
+E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\Asteroids\x64\Debug\Asteroids.pdb
