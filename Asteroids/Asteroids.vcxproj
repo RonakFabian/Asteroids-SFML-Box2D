@@ -151,12 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ObjectPool.cpp" />
+    <ClCompile Include="Rocket.cpp" />
     <ClCompile Include="Source\entity.cpp" />
     <ClCompile Include="Source\entity_manager.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\test_state.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ObjectPool.h" />
+    <ClInclude Include="Rocket.h" />
     <ClInclude Include="Source\entity.h" />
     <ClInclude Include="Source\entity_manager.h" />
     <ClInclude Include="Source\Game.h" />

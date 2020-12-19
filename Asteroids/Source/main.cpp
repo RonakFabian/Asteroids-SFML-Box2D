@@ -4,11 +4,12 @@
 
 game_state coreState;
 bool quitGame = false;
+ 
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(1280, 768), "Role Call");
-
+	sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT,32), "Role Call");
+	srand(time(NULL));
 	coreState.SetWindow(&window);
 	coreState.SetState(new test_state());
 

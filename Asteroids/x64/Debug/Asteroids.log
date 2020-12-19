@@ -1,1 +1,14 @@
-﻿  Asteroids.vcxproj -> E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\Asteroids\x64\Debug\Asteroids.exe
+﻿  entity.cpp
+E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\Asteroids\Source\entity.cpp(92,62): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\Asteroids\Source\entity.cpp(92,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  entity_manager.cpp
+  Generating Code...
+  Asteroids.vcxproj -> E:\Asteroid\Asteroids\Asteroids-SFML-Box2D-\Asteroids\x64\Debug\Asteroids.exe

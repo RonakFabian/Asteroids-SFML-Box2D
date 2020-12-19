@@ -2,7 +2,7 @@
 
 EntityManager::EntityManager()
 {
-	this->world = new b2World(b2Vec2(0, -10));
+	this->world = new b2World(b2Vec2(0, 0));
 }
 
 void EntityManager::Add(std::string name, Entity* entity)
@@ -29,6 +29,48 @@ void EntityManager::Add(std::string name, std::string filename, bool dynamic)
 	this->entities.insert(std::make_pair(name, entity));
 }
 
+void EntityManager::Add(std::string name, std::string filename, bool dynamic,  float x, float y)
+{
+	std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(name);
+	while (found != this->entities.end())
+	{
+		name += "0";
+		found = this->entities.find(name);
+	}
+	Entity* entity = new Entity(this->world);
+	entity->Load(filename, dynamic,x,y);
+	this->entities.insert(std::make_pair(name, entity));
+}
+
+void EntityManager::Add(std::string name, std::string filename, bool dynamic, float x, float y, Entity* entity)
+{
+	std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(name);
+	while (found != this->entities.end())
+	{
+		name += "0";
+		found = this->entities.find(name);
+	}
+	
+	entity->Load(filename, dynamic, x, y);
+	this->entities.insert(std::make_pair(name, entity));
+	
+}
+
+void EntityManager::Remove(std::string name)
+{
+	std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(name);
+
+	if (found == this->entities.end())
+	{
+		return ;
+	}
+	else
+	{
+		if(found->second!=nullptr)
+		entities.erase(found);
+	}
+}
+
 Entity* EntityManager::Get(std::string name)
 {
 	std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(name);
@@ -49,34 +91,6 @@ bool EntityManager::Update(sf::RenderWindow* window)
 
 	this->world->Step(1.0f / 60.0f, 6, 2);
 
-	for (auto& iterator : this->entities)
-	{
-		switch (iterator.second->Active())
-		{
-		case 0:
-			toRemove.push_back(iterator.first);
-			break;
-		default:
-			if (!iterator.second->Update(window))
-			{
-				return false;
-			}
-			break;
-		}
-	}
-
-	for (auto& iterator : toRemove)
-	{
-		std::unordered_map<std::string, Entity*>::const_iterator found = this->entities.find(iterator);
-
-		if (found != this->entities.end())
-		{
-			delete found->second;
-			this->entities.erase(iterator);
-		}
-	}
-	toRemove.clear();
-
 	return true;
 }
 
@@ -84,7 +98,13 @@ void EntityManager::Render(sf::RenderWindow* window)
 {
 	for (auto& iterator : this->entities)
 	{
-		window->draw(*iterator.second);
+	
+		if (iterator.second->canUpdate)
+		{
+			window->draw(*iterator.second);
+			iterator.second->Update(window);
+		}
+		
 	}
 }
 
